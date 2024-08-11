@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Mahasiswa</title>
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-400 to-purple-500">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-white">Dashboard Mahasiswa</h1>
+        <div id="pie-chart-container" class="bg-white p-4 rounded-lg shadow-md mb-8"></div>
+        <div id="chart-container" class="bg-white p-4 rounded-lg shadow-md"></div>
+    </div>
+    <script>
+        var jurusanData = {{ jurusan_data_json|safe }};
+    </script>
+    <script src="{% static 'js/pie-chart.js' %}"></script>
+    <script>
+        console.log('Jurusan Data:', {{ jurusan_data_json|safe }});
+    </script>
+</body>
+</html>
